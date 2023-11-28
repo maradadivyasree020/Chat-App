@@ -17,7 +17,7 @@ function onConnected(socket){
     socketsConnected.add(socket.id)
 
     io.emit('clients-total',socketsConnected.size)
-    
+
     socket.on('disconnect',()=>{
         console.log('Socket disconnected',socket.id)
         socketsConnected.delete(socket.id)
